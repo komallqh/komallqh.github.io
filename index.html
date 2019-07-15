@@ -229,6 +229,130 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/16/hexo问题记录/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/07/16/hexo问题记录/" itemprop="url">hexo问题记录</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-07-16T01:17:42+08:00">
+                2019-07-16
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="记录Hexo搭建过程遇到的一些问题"><a href="#记录Hexo搭建过程遇到的一些问题" class="headerlink" title="记录Hexo搭建过程遇到的一些问题"></a>记录Hexo搭建过程遇到的一些问题</h1><h2 id="问题一：4000端口被占用"><a href="#问题一：4000端口被占用" class="headerlink" title="问题一：4000端口被占用"></a>问题一：4000端口被占用</h2><p>解决方法：<br>1.可以用hexo server -p 5000    命令将端口修改为5000<br>2.可以在_config.yml内加上如下代码更改hexo-server运行时的端口号：</p>
+<p>server:<br>  port: 4001<br>  compress: true<br>  header: true<br>其中4001可以换成想要运行的端口号。<br>参考链接: <a href="https://segmentfault.com/q/1010000008546859?_ea=1678427" target="_blank" rel="noopener">https://segmentfault.com/q/1010000008546859?_ea=1678427</a></p>
+<h2 id="问题二：出现错误如下："><a href="#问题二：出现错误如下：" class="headerlink" title="问题二：出现错误如下："></a>问题二：出现错误如下：</h2><p><img src="https://img-blog.csdnimg.cn/20190716005357954.png" alt="在这里插入图片描述"><br>解决方法：<br>打开根目录下的_config.yml文件，添加<br><img src="https://img-blog.csdnimg.cn/20190716005826525.png" alt><br>【图中xxx为自定义的名字】</p>
+<p><em>注意缩进方式</em><br><img src="https://img-blog.csdnimg.cn/20190716005625884.png" alt="在这里插入图片描述"><br>参考链接: <a href="https://www.cnblogs.com/fanbi/p/10174558.html" target="_blank" rel="noopener">https://www.cnblogs.com/fanbi/p/10174558.html</a></p>
+<h2 id="Hexo搭建过程参考博文"><a href="#Hexo搭建过程参考博文" class="headerlink" title="Hexo搭建过程参考博文"></a>Hexo搭建过程参考博文</h2><p>链接：<br><a href="https://blog.csdn.net/sinat_37781304/article/details/82729029" target="_blank" rel="noopener">https://blog.csdn.net/sinat_37781304/article/details/82729029</a><br><a href="https://blog.csdn.net/Hoshea_chx/article/details/78826689" target="_blank" rel="noopener">https://blog.csdn.net/Hoshea_chx/article/details/78826689</a></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/15/hello-world/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -394,7 +518,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-count">2</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
