@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title><![CDATA[hexo问题记录]]></title>
+    <url>%2F2019%2F07%2F16%2Fhexo%E9%97%AE%E9%A2%98%E8%AE%B0%E5%BD%95%2F</url>
+    <content type="text"><![CDATA[记录Hexo搭建过程遇到的一些问题问题一：4000端口被占用解决方法：1.可以用hexo server -p 5000 命令将端口修改为50002.可以在_config.yml内加上如下代码更改hexo-server运行时的端口号： server: port: 4001 compress: true header: true其中4001可以换成想要运行的端口号。参考链接: https://segmentfault.com/q/1010000008546859?_ea=1678427 问题二：出现错误如下：解决方法：打开根目录下的_config.yml文件，添加【图中xxx为自定义的名字】 注意缩进方式参考链接: https://www.cnblogs.com/fanbi/p/10174558.html Hexo搭建过程参考博文链接：https://blog.csdn.net/sinat_37781304/article/details/82729029https://blog.csdn.net/Hoshea_chx/article/details/78826689]]></content>
+  </entry>
+  <entry>
+    <title><![CDATA[Hello World]]></title>
+    <url>%2F2019%2F07%2F15%2Fhello-world%2F</url>
+    <content type="text"><![CDATA[Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick StartCreate a new post1$ hexo new "My New Post" More info: Writing Run server1$ hexo server More info: Server Generate static files1$ hexo generate More info: Generating Deploy to remote sites1$ hexo deploy More info: Deployment]]></content>
+  </entry>
+</search>
