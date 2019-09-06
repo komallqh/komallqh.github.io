@@ -358,15 +358,18 @@
       
         
           
-            <meta name="referrer" content="no-referrer">
-
-<h1 id="记录Hexo搭建过程遇到的一些问题"><a href="#记录Hexo搭建过程遇到的一些问题" class="headerlink" title="记录Hexo搭建过程遇到的一些问题"></a>记录Hexo搭建过程遇到的一些问题</h1><h2 id="问题一：4000端口被占用"><a href="#问题一：4000端口被占用" class="headerlink" title="问题一：4000端口被占用"></a>问题一：4000端口被占用</h2><p>解决方法：<br>1.可以用hexo server -p 5000    命令将端口修改为5000<br>2.可以在_config.yml内加上如下代码更改hexo-server运行时的端口号：</p>
-<p>server:<br>  port: 4001<br>  compress: true<br>  header: true<br>其中4001可以换成想要运行的端口号。<br>参考链接: <a href="https://segmentfault.com/q/1010000008546859?_ea=1678427" target="_blank" rel="noopener">https://segmentfault.com/q/1010000008546859?_ea=1678427</a></p>
-<h2 id="问题二：出现错误如下："><a href="#问题二：出现错误如下：" class="headerlink" title="问题二：出现错误如下："></a>问题二：出现错误如下：</h2><p><img src="https://img-blog.csdnimg.cn/20190716005357954.png" alt="在这里插入图片描述"><br>解决方法：<br>打开根目录下的_config.yml文件，添加<br><img src="https://img-blog.csdnimg.cn/20190716005826525.png" alt><br>【图中xxx为自定义的名字】</p>
-<p><em>注意缩进方式</em><br><img src="https://img-blog.csdnimg.cn/20190716005625884.png" alt="在这里插入图片描述"><br>参考链接: <a href="https://www.cnblogs.com/fanbi/p/10174558.html" target="_blank" rel="noopener">https://www.cnblogs.com/fanbi/p/10174558.html</a></p>
-<h2 id="Hexo搭建过程参考博文"><a href="#Hexo搭建过程参考博文" class="headerlink" title="Hexo搭建过程参考博文"></a>Hexo搭建过程参考博文</h2><p>链接：<br><a href="https://blog.csdn.net/sinat_37781304/article/details/82729029" target="_blank" rel="noopener">https://blog.csdn.net/sinat_37781304/article/details/82729029</a><br><a href="https://blog.csdn.net/Hoshea_chx/article/details/78826689" target="_blank" rel="noopener">https://blog.csdn.net/Hoshea_chx/article/details/78826689</a></p>
-
           
+
+记录Hexo搭建过程遇到的一些问题问题一：4000端口被占用解决方法：1.可以用hexo server -p 5000    命令将端口修改为50002.可以在_config.yml内加上如下代码更改hexo-server运行时的端口号：
+server:  port: 4001  compres
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/07/16/hexo问题记录/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
