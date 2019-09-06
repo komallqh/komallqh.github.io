@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[浏览器内核]]></title>
+    <url>%2F2019%2F09%2F07%2F%E6%B5%8F%E8%A7%88%E5%99%A8%E5%86%85%E6%A0%B8%2F</url>
+    <content type="text"><![CDATA[浏览器内核分为两部分：一是渲染引擎，其主要负责结构与样式，即网页的内容（HTML，XML，图像等），以及计算网页显示方式，然后输出到打印机；而JS引擎主要是负责解析JavaScript，实现页面交互效果；一个负责搭建静态结构，一个用来展现动态效果；后来js引擎越来越独立，浏览器内核便更加倾向于指渲染引擎。 目前常见浏览器及其内核IE浏览器：ie11之前用Trident内核，后来的Edge采用了新内核（EdgeHTML）火狐浏览器：使用Gecko内核（开源）Safari：使用Webkit内核；而且Webkit最先是由苹果开发的Chrome浏览器：Chrome内核➡Webkit内核➡Blink内核；另外谷歌后来还研发了自己的JavaScript引擎：V8，极大地提高了JavaScript运行速度Opera：最初是自己研发的Presto，后来同谷歌一样用了Webkit，现在也是Blink内核]]></content>
+      <tags>
+        <tag>浏览器</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[hexo主题修改]]></title>
     <url>%2F2019%2F09%2F06%2Fhexo%E4%B8%BB%E9%A2%98%E4%BF%AE%E6%94%B9%2F</url>
     <content type="text"><![CDATA[修改Hexo主题及问题记录 昨晚试着将段时间搭建的hexo改一下主题，觉得NexT.Mist看起来挺简洁，挺喜欢这种风格的； 以下主要是一个索引，记录我搭建以及修改过程所参考的文章搭建博客 当时搭建博客主要参考的博文有： Hexo官方文档 hexo史上最全搭建教程 NexT.Mist主题参考的博文： next官方文档 Hexo的Next主题详细配置 修改主题过程遇到的一些小失误 hexo new page tag 创建标签页时报错： FATAL can not read a block mapping entry; a multiline key may not be an implicit key at line 70, column 1: … 错误 解决办法：_config.yml中配置项的冒号后面要用空格隔开，再跟内容 将Hexo设置首页不显示全文 方法：在主题配置文件_config.yml中找到auto_excerpt字段，将enable修改为true，可以实现首页显示文章预览；不过这 并不是Hexo推荐的方法；Hexo推荐在文章中使用&lt;!-- more --&gt;在more之前的内容会显现在首页的文章预览中，而more之后的内容可以在文章详情中显示 Hexo瞎折腾系列(4) - 站点首页不显示文章全文 中文乱码问题：将_config.yml的格式保存为UTF-8 hexo,部署博客到github和coding上，代码put上去了，但是访问博客内容却没更新？ 解决方法：我的是浏览器缓存问题，清除以下浏览器缓存就行了； 其他原因可以参考：hexo,部署博客到github和coding上，代码put上去了，但是访问博客内容却没更新？ 附上Hexo常用命令Hexo常用命令]]></content>
