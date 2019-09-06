@@ -1,9 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[hexo主题修改]]></title>
+    <url>%2F2019%2F09%2F06%2Fhexo%E4%B8%BB%E9%A2%98%E4%BF%AE%E6%94%B9%2F</url>
+    <content type="text"><![CDATA[修改Hexo主题及问题记录 昨晚试着将段时间搭建的hexo改一下主题，觉得NexT.Mist看起来挺简洁，挺喜欢这种风格的； 以下主要是一个索引，记录我搭建以及修改过程所参考的文章搭建博客 当时搭建博客主要参考的博文有： Hexo官方文档 hexo史上最全搭建教程 NexT.Mist主题参考的博文： next官方文档 Hexo的Next主题详细配置 修改主题过程遇到的一些小失误 hexo new page tag 创建标签页时报错： FATAL can not read a block mapping entry; a multiline key may not be an implicit key at line 70, column 1: … 错误 解决办法：_config.yml中配置项的冒号后面要用空格隔开，再跟内容 将Hexo设置首页不显示全文 方法：在主题配置文件_config.yml中找到auto_excerpt字段，将enable修改为true，可以实现首页显示文章预览；不过这 并不是Hexo推荐的方法；Hexo推荐在文章中使用&lt;!-- more --&gt;在more之前的内容会显现在首页的文章预览中，而more之后的内容可以在文章详情中显示 Hexo瞎折腾系列(4) - 站点首页不显示文章全文 中文乱码问题：将_config.yml的格式保存为UTF-8 hexo,部署博客到github和coding上，代码put上去了，但是访问博客内容却没更新？ 解决方法：我的是浏览器缓存问题，清除以下浏览器缓存就行了； 其他原因可以参考：hexo,部署博客到github和coding上，代码put上去了，但是访问博客内容却没更新？ 附上Hexo常用命令Hexo常用命令]]></content>
+      <tags>
+        <tag>Hexo</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[hexo问题记录]]></title>
     <url>%2F2019%2F07%2F16%2Fhexo%E9%97%AE%E9%A2%98%E8%AE%B0%E5%BD%95%2F</url>
     <content type="text"><![CDATA[记录Hexo搭建过程遇到的一些问题问题一：4000端口被占用解决方法：1.可以用hexo server -p 5000 命令将端口修改为50002.可以在_config.yml内加上如下代码更改hexo-server运行时的端口号： server: port: 4001 compress: true header: true其中4001可以换成想要运行的端口号。参考链接: https://segmentfault.com/q/1010000008546859?_ea=1678427 问题二：出现错误如下：解决方法：打开根目录下的_config.yml文件，添加【图中xxx为自定义的名字】 注意缩进方式参考链接: https://www.cnblogs.com/fanbi/p/10174558.html Hexo搭建过程参考博文链接：https://blog.csdn.net/sinat_37781304/article/details/82729029https://blog.csdn.net/Hoshea_chx/article/details/78826689]]></content>
+      <tags>
+        <tag>Hexo</tag>
+      </tags>
   </entry>
   <entry>
     <title><![CDATA[Hello World]]></title>
