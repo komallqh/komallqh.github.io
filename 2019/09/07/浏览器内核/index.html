@@ -87,7 +87,7 @@
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://img-blog.csdnimg.cn/20190908193313365.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjMwNDAzNw==,size_16,color_FFFFFF,t_70">
 <meta property="og:image" content="https://img-blog.csdnimg.cn/2019090819461090.png">
-<meta property="og:updated_time" content="2019-09-08T12:22:43.818Z">
+<meta property="og:updated_time" content="2019-09-08T12:29:21.184Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="浏览器内核">
 <meta name="twitter:description" content="浏览器内核分为两部分：一是渲染引擎，其主要负责结构与样式，即网页的内容（HTML，XML，图像等），以及计算网页显示方式，然后输出到打印机；而JS引擎主要是负责解析JavaScript，实现页面交互效果；一个负责搭建静态结构，一个用来展现动态效果；后来js引擎越来越独立，浏览器内核便更加倾向于指渲染引擎。">
@@ -355,10 +355,10 @@
 <h2 id="浏览器页面渲染过程（及尽量避免重绘回流的操作）"><a href="#浏览器页面渲染过程（及尽量避免重绘回流的操作）" class="headerlink" title="浏览器页面渲染过程（及尽量避免重绘回流的操作）"></a>浏览器页面渲染过程（及尽量避免重绘回流的操作）</h2><p>1 用户输入网址（假设是HTML页面，第一次访问，无缓存） 浏览器想服务器发出HTTP请求，服务器返回HTML文件（善用缓存，减少HTTP请求，减轻服务器压力）</p>
 <ol start="2">
 <li>浏览器载入HTML代码，获取CSS文件（CSS文件合并，减少HTTP请求）</li>
-<li>载入<body>，开始渲染页面（CSS文件放在最上面，避免重复渲染 ）</body></li>
-<li>浏览器发现一个<img>，向服务器发出请求，此时浏览器不会等到图片下载完，而是继续渲染后面的代码（图片文件合并，减少HTTP请求）</li>
+<li>载入<code>&lt;body&gt;</code>，开始渲染页面（CSS文件放在最上面，避免重复渲染 ）</li>
+<li>浏览器发现一个<code>&lt;img&gt;</code>，向服务器发出请求，此时浏览器不会等到图片下载完，而是继续渲染后面的代码（图片文件合并，减少HTTP请求）</li>
 <li>服务器返回图片文件，由于图片面积，影响界面中其他元素的排版，此时，浏览器需要重新渲染这部分代码（最好图片都设置尺寸，避免重新渲染）</li>
-<li>浏览器发现一个包含js代码的<script>标签，会立即运行该js代码（script最好放在页面最下面）</li>
+<li>浏览器发现一个包含js代码的<code>&lt;script&gt;</code>标签，会立即运行该js代码（script最好放在页面最下面）</li>
 <li>js执行命令：隐藏掉代码中某个div元素，此时浏览器不得不重新渲染这部分代码（页面初始化样式不要使用js控制）</li>
 <li>如果某时刻，用户通过点击某个按钮修个这个页面样式（如换肤），请求新的CSS文件，此时发生回流，重新渲染页面</li>
 </ol>
@@ -384,8 +384,8 @@
 <li>减少不必要的 DOM 层级（DOM depth）。改变 DOM 树中的一级会导致所有层级的改变，上至根部，下至被改变节点的子节点。这导致大量时间耗费在执行 reflow 上面。</li>
 <li>避免不必要的复杂的 CSS 选择器，尤其是后代选择器（descendant selectors），因为为了匹配选择器将耗费更多的 CPU</li>
 </ul>
-<p><a href="https://www.cnblogs.com/xiaohuochai/p/9193083.html#top">从输入url到加载完成过程</a></p>
-</script></li></ol>
+<p><a href="https://www.cnblogs.com/xiaohuochai/p/9193083.html#top" target="_blank" rel="noopener">从输入url到加载完成过程</a></p>
+
       
     </div>
     
@@ -546,7 +546,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#目前常见浏览器及其内核"><span class="nav-number">1.</span> <span class="nav-text">目前常见浏览器及其内核</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#浏览器渲染引擎的工作原理"><span class="nav-number">2.</span> <span class="nav-text">浏览器渲染引擎的工作原理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#浏览器页面渲染过程（及尽量避免重绘回流的操作）"><span class="nav-number">3.</span> <span class="nav-text">浏览器页面渲染过程（及尽量避免重绘回流的操作）</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#目前常见浏览器及其内核"><span class="nav-number">1.</span> <span class="nav-text">目前常见浏览器及其内核</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#浏览器渲染引擎的工作原理"><span class="nav-number">2.</span> <span class="nav-text">浏览器渲染引擎的工作原理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#浏览器页面渲染过程（及尽量避免重绘回流的操作）"><span class="nav-number">3.</span> <span class="nav-text">浏览器页面渲染过程（及尽量避免重绘回流的操作）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#关于reflow和repaint"><span class="nav-number">4.</span> <span class="nav-text">关于reflow和repaint</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#引起reflow的情况（标准流内的元素发生形态上的改变）"><span class="nav-number">4.1.</span> <span class="nav-text">引起reflow的情况（标准流内的元素发生形态上的改变）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#reflow是不可避免的，只能将reflow对性能的影响减到最小。"><span class="nav-number">4.2.</span> <span class="nav-text">reflow是不可避免的，只能将reflow对性能的影响减到最小。</span></a></li></ol></li></ol></div>
             
 
           </div>
