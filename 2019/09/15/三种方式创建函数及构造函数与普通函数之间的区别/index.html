@@ -85,7 +85,7 @@
 <meta property="og:site_name" content="前端学习">
 <meta property="og:description" content="创建函数的三种方式：函数声明，函数表达式，函数对象">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-09-15T02:09:22.567Z">
+<meta property="og:updated_time" content="2019-09-21T11:08:51.184Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="三种方式创建函数及构造函数与普通函数之间的区别">
 <meta name="twitter:description" content="创建函数的三种方式：函数声明，函数表达式，函数对象">
@@ -362,12 +362,13 @@
 <li><p>定义方式：构造函数首字母通常大写</p>
 </li>
 <li><p>调用方式：构造函数调用方法为：new Person()</p>
-<pre><code>普通函数调用方法为：person（）</code></pre><ul>
-<li>作用：构造函数用来新建实例对象</li>
-<li>构造函数的函数名与类名相同：Person( ) 这个构造函数，Person 既是函数名，也是这个对象的类名</li>
-<li>构造函数内部用this 来构造属性和方法 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"> function Person(name,job,age)</span><br><span class="line">&#123;</span><br><span class="line">     this.name=name;</span><br><span class="line">     this.job=job;</span><br><span class="line">     this.age=age;</span><br><span class="line">     this.sayHi=function()</span><br><span class="line">         &#123;</span><br><span class="line">          alert(&quot;Hi&quot;)</span><br><span class="line">         &#125;</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
+<pre><code>普通函数调用方法为：person（）</code></pre></li>
+<li><p>作用：构造函数用来新建实例对象</p>
 </li>
-</ul>
+<li><p>构造函数的函数名与类名相同：Person( ) 这个构造函数，Person 既是函数名，也是这个对象的类名</p>
+</li>
+<li><p>构造函数内部用this 来构造属性和方法 </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"> function Person(name,job,age)</span><br><span class="line">&#123;</span><br><span class="line">     this.name=name;</span><br><span class="line">     this.job=job;</span><br><span class="line">     this.age=age;</span><br><span class="line">     this.sayHi=function()</span><br><span class="line">         &#123;</span><br><span class="line">          alert(&quot;Hi&quot;)</span><br><span class="line">         &#125;</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>构造函数的执行流程</p>
 <pre><code>在堆内存中创建一个新的对象
