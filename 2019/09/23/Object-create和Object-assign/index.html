@@ -66,7 +66,7 @@
 
 
 
-  <meta name="keywords" content="Hexo,">
+  <meta name="keywords" content="JavaScript,">
 
 
 
@@ -77,22 +77,18 @@
 
 
 
-<meta name="description" content="记录Hexo搭建过程遇到的一些问题问题一：4000端口被占用解决方法：1.可以用hexo server -p 5000    命令将端口修改为50002.可以在_config.yml内加上如下代码更改hexo-server运行时的端口号：">
-<meta name="keywords" content="Hexo">
+<meta name="description" content="Object.create和Object.assign的区别：">
+<meta name="keywords" content="JavaScript">
 <meta property="og:type" content="article">
-<meta property="og:title" content="hexo问题记录">
-<meta property="og:url" content="http://yoursite.com/2019/07/16/hexo问题记录/index.html">
+<meta property="og:title" content="Object.create和Object.assign">
+<meta property="og:url" content="http://yoursite.com/2019/09/23/Object-create和Object-assign/index.html">
 <meta property="og:site_name" content="前端学习">
-<meta property="og:description" content="记录Hexo搭建过程遇到的一些问题问题一：4000端口被占用解决方法：1.可以用hexo server -p 5000    命令将端口修改为50002.可以在_config.yml内加上如下代码更改hexo-server运行时的端口号：">
+<meta property="og:description" content="Object.create和Object.assign的区别：">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/20190716005357954.png">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/20190716005826525.png">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/20190716005625884.png">
-<meta property="og:updated_time" content="2019-09-06T02:08:19.868Z">
+<meta property="og:updated_time" content="2019-09-23T01:47:11.278Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="hexo问题记录">
-<meta name="twitter:description" content="记录Hexo搭建过程遇到的一些问题问题一：4000端口被占用解决方法：1.可以用hexo server -p 5000    命令将端口修改为50002.可以在_config.yml内加上如下代码更改hexo-server运行时的端口号：">
-<meta name="twitter:image" content="https://img-blog.csdnimg.cn/20190716005357954.png">
+<meta name="twitter:title" content="Object.create和Object.assign">
+<meta name="twitter:description" content="Object.create和Object.assign的区别：">
 
 
 
@@ -122,13 +118,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/07/16/hexo问题记录/">
+  <link rel="canonical" href="http://yoursite.com/2019/09/23/Object-create和Object-assign/">
 
 
 
 
 
-  <title>hexo问题记录 | 前端学习</title>
+  <title>Object.create和Object.assign | 前端学习</title>
   
 
 
@@ -277,7 +273,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/16/hexo问题记录/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/23/Object-create和Object-assign/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Komallqh">
@@ -294,7 +290,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">hexo问题记录</h1>
+          <h1 class="post-title" itemprop="name headline">Object.create和Object.assign</h1>
         
 
         <div class="post-meta">
@@ -306,8 +302,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-07-16T01:17:42+08:00">
-                2019-07-16
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-09-23T09:27:55+08:00">
+                2019-09-23
               </time>
             
 
@@ -349,14 +345,53 @@
       
 
       
-        <meta name="referrer" content="no-referrer">
+        <h3 id="Object-create和Object-assign的区别："><a href="#Object-create和Object-assign的区别：" class="headerlink" title="Object.create和Object.assign的区别："></a>Object.create和Object.assign的区别：</h3><a id="more"></a>
+<ul>
+<li><p>obj1.create(obj2)将obj1的原型指向obj2</p>
+</li>
+<li><p>obj1 = Object.assign(obj2,obj3,obj4)</p>
+<h3 id="Object-create"><a href="#Object-create" class="headerlink" title="Object.create()"></a>Object.create()</h3></li>
+<li><p>Object.create(proto[, propertiesObject])</p>
+</li>
+<li><p>作用<br>  Object.create()方法创建一个新对象，使用现有的对象来提供新创建的对象的<strong>proto</strong></p>
+</li>
+<li><p>常见例子</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">const person = &#123;</span><br><span class="line">  isHuman: false,</span><br><span class="line">  printIntroduction: function () &#123;</span><br><span class="line">    console.log(`My name is $&#123;this.name&#125;. Am I human? $&#123;this.isHuman&#125;`);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">const me = Object.create(person);</span><br><span class="line"></span><br><span class="line">me.name = &quot;Matthew&quot;; // &quot;name&quot; is a property set on &quot;me&quot;, but not on &quot;person&quot;</span><br><span class="line">me.isHuman = true; // inherited properties can be overwritten</span><br><span class="line"></span><br><span class="line">me.printIntroduction();</span><br><span class="line">// expected output: &quot;My name is Matthew. Am I human? true&quot;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>不常用例子</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">o = Object.create(Object.prototype, &#123;</span><br><span class="line">  // foo会成为所创建对象的数据属性</span><br><span class="line">  foo: &#123; </span><br><span class="line">    writable:true,</span><br><span class="line">    configurable:true,</span><br><span class="line">    value: &quot;hello&quot; </span><br><span class="line">  &#125;,</span><br><span class="line">  // bar会成为所创建对象的访问器属性</span><br><span class="line">  bar: &#123;</span><br><span class="line">    configurable: false,</span><br><span class="line">    get: function() &#123; return 10 &#125;,</span><br><span class="line">    set: function(value) &#123;</span><br><span class="line">      console.log(&quot;Setting `o.bar` to&quot;, value);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
 
-<h1 id="记录Hexo搭建过程遇到的一些问题"><a href="#记录Hexo搭建过程遇到的一些问题" class="headerlink" title="记录Hexo搭建过程遇到的一些问题"></a>记录Hexo搭建过程遇到的一些问题</h1><h2 id="问题一：4000端口被占用"><a href="#问题一：4000端口被占用" class="headerlink" title="问题一：4000端口被占用"></a>问题一：4000端口被占用</h2><p>解决方法：<br>1.可以用hexo server -p 5000    命令将端口修改为5000<br>2.可以在_config.yml内加上如下代码更改hexo-server运行时的端口号：</p>
-<a id="more"></a>
-<p>server:<br>  port: 4001<br>  compress: true<br>  header: true<br>其中4001可以换成想要运行的端口号。<br>参考链接: <a href="https://segmentfault.com/q/1010000008546859?_ea=1678427" target="_blank" rel="noopener">https://segmentfault.com/q/1010000008546859?_ea=1678427</a></p>
-<h2 id="问题二：出现错误如下："><a href="#问题二：出现错误如下：" class="headerlink" title="问题二：出现错误如下："></a>问题二：出现错误如下：</h2><p><img src="https://img-blog.csdnimg.cn/20190716005357954.png" alt="在这里插入图片描述"><br>解决方法：<br>打开根目录下的_config.yml文件，添加<br><img src="https://img-blog.csdnimg.cn/20190716005826525.png" alt><br>【图中xxx为自定义的名字】</p>
-<p><em>注意缩进方式</em><br><img src="https://img-blog.csdnimg.cn/20190716005625884.png" alt="在这里插入图片描述"><br>参考链接: <a href="https://www.cnblogs.com/fanbi/p/10174558.html" target="_blank" rel="noopener">https://www.cnblogs.com/fanbi/p/10174558.html</a></p>
-<h2 id="Hexo搭建过程参考博文"><a href="#Hexo搭建过程参考博文" class="headerlink" title="Hexo搭建过程参考博文"></a>Hexo搭建过程参考博文</h2><p>链接：<br><a href="https://blog.csdn.net/sinat_37781304/article/details/82729029" target="_blank" rel="noopener">https://blog.csdn.net/sinat_37781304/article/details/82729029</a><br><a href="https://blog.csdn.net/Hoshea_chx/article/details/78826689" target="_blank" rel="noopener">https://blog.csdn.net/Hoshea_chx/article/details/78826689</a></p>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">// 创建一个以另一个空对象为原型,且拥有一个属性p的对象</span><br><span class="line">o = Object.create(&#123;&#125;, &#123; p: &#123; value: 42 &#125; &#125;)</span><br><span class="line"></span><br><span class="line">// 省略了的属性特性默认为false,所以属性p是不可写,不可枚举,不可配置的:</span><br><span class="line">o.p = 24</span><br><span class="line">o.p</span><br><span class="line">//42</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">//创建一个可写的,可枚举的,可配置的属性p</span><br><span class="line">o2 = Object.create(&#123;&#125;, &#123;</span><br><span class="line">  p: &#123;</span><br><span class="line">    value: 42, </span><br><span class="line">    writable: true,</span><br><span class="line">    enumerable: true,</span><br><span class="line">    configurable: true </span><br><span class="line">  &#125; </span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<h3 id="Object-assign"><a href="#Object-assign" class="headerlink" title="Object.assign()"></a>Object.assign()</h3><ul>
+<li>Object.assign(target, …sources)</li>
+<li>用于将所有可枚举属性的值从一个或多个源对象复制到目标对象。它将返回目标对象。</li>
+<li>常见特性：<br>  相同的键，会被覆盖；<br>  String类型和 Symbol 类型的属性都会被拷贝；<br>  在出现错误的情况下，例如，如果属性不可写，会引发TypeError，如果在引发错误之前添加了任何属性，则可以更改target对象；<br>  Object.assign 不会在那些source对象值为 null 或 undefined 的时候抛出错误。</li>
+<li>常见例子<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">const target = &#123; a: 1, b: 2 &#125;;</span><br><span class="line">const source = &#123; b: 4, c: 5 &#125;;</span><br><span class="line"></span><br><span class="line">const returnedTarget = Object.assign(target, source);</span><br><span class="line"></span><br><span class="line">console.log(target);</span><br><span class="line">// expected output: Object &#123; a: 1, b: 4, c: 5 &#125;</span><br><span class="line"></span><br><span class="line">console.log(returnedTarget);</span><br><span class="line">// expected output: Object &#123; a: 1, b: 4, c: 5 &#125;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">const obj = &#123; a: 1 &#125;;</span><br><span class="line">const copy = Object.assign(&#123;&#125;, obj);</span><br><span class="line">console.log(copy); // &#123; a: 1 &#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">//对象深拷贝</span><br><span class="line">let obj1 = &#123; a: 0 , b: &#123; c: 0&#125;&#125;; </span><br><span class="line">let obj2 = Object.assign(&#123;&#125;, obj1); </span><br><span class="line">console.log(JSON.stringify(obj2)); // &#123; a: 0, b: &#123; c: 0&#125;&#125; </span><br><span class="line"></span><br><span class="line">obj1.a = 1; </span><br><span class="line">console.log(JSON.stringify(obj1)); // &#123; a: 1, b: &#123; c: 0&#125;&#125; </span><br><span class="line">console.log(JSON.stringify(obj2)); // &#123; a: 0, b: &#123; c: 0&#125;&#125; </span><br><span class="line"></span><br><span class="line">obj2.a = 2; </span><br><span class="line">console.log(JSON.stringify(obj1)); // &#123; a: 1, b: &#123; c: 0&#125;&#125; </span><br><span class="line">console.log(JSON.stringify(obj2)); // &#123; a: 2, b: &#123; c: 0&#125;&#125;</span><br><span class="line"> </span><br><span class="line">obj2.b.c = 3; </span><br><span class="line">console.log(JSON.stringify(obj1)); // &#123; a: 1, b: &#123; c: 3&#125;&#125; </span><br><span class="line">console.log(JSON.stringify(obj2)); // &#123; a: 2, b: &#123; c: 3&#125;&#125; </span><br><span class="line"></span><br><span class="line">// Deep Clone </span><br><span class="line">obj1 = &#123; a: 0 , b: &#123; c: 0&#125;&#125;; </span><br><span class="line">let obj3 = JSON.parse(JSON.stringify(obj1)); </span><br><span class="line">obj1.a = 4; </span><br><span class="line">obj1.b.c = 4; </span><br><span class="line">console.log(JSON.stringify(obj3)); // &#123; a: 0, b: &#123; c: 0&#125;&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">//合并对象</span><br><span class="line">const o1 = &#123; a: 1 &#125;;</span><br><span class="line">const o2 = &#123; b: 2 &#125;;</span><br><span class="line">const o3 = &#123; c: 3 &#125;;</span><br><span class="line"></span><br><span class="line">const obj = Object.assign(o1, o2, o3);</span><br><span class="line">console.log(obj); // &#123; a: 1, b: 2, c: 3 &#125;</span><br><span class="line">console.log(o1);  // &#123; a: 1, b: 2, c: 3 &#125;, 注意目标对象自身也会改变</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">//合并具有相同属性的对象</span><br><span class="line">const o1 = &#123; a: 1, b: 1, c: 1 &#125;;</span><br><span class="line">const o2 = &#123; b: 2, c: 2 &#125;;</span><br><span class="line">const o3 = &#123; c: 3 &#125;;</span><br><span class="line"></span><br><span class="line">const obj = Object.assign(&#123;&#125;, o1, o2, o3);</span><br><span class="line">console.log(obj); // &#123; a: 1, b: 2, c: 3 &#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">//拷贝 symbol 类型的属性</span><br><span class="line">const o1 = &#123; a: 1 &#125;;</span><br><span class="line">const o2 = &#123; [Symbol(&apos;foo&apos;)]: 2 &#125;;</span><br><span class="line"></span><br><span class="line">const obj = Object.assign(&#123;&#125;, o1, o2);</span><br><span class="line">console.log(obj); // &#123; a : 1, [Symbol(&quot;foo&quot;)]: 2 &#125; (cf. bug 1207182 on Firefox)</span><br><span class="line">Object.getOwnPropertySymbols(obj); // [Symbol(foo)]</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">//继承属性和不可枚举属性是不能拷贝的</span><br><span class="line">const obj = Object.create(&#123;foo: 1&#125;, &#123; // foo 是个继承属性。</span><br><span class="line">    bar: &#123;</span><br><span class="line">        value: 2  // bar 是个不可枚举属性。</span><br><span class="line">    &#125;,</span><br><span class="line">    baz: &#123;</span><br><span class="line">        value: 3,</span><br><span class="line">        enumerable: true  // baz 是个自身可枚举属性。</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">const copy = Object.assign(&#123;&#125;, obj);</span><br><span class="line">console.log(copy); // &#123; baz: 3 &#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">//原始类型会被包装为对象</span><br><span class="line">const v1 = &quot;abc&quot;;</span><br><span class="line">const v2 = true;</span><br><span class="line">const v3 = 10;</span><br><span class="line">const v4 = Symbol(&quot;foo&quot;)</span><br><span class="line"></span><br><span class="line">const obj = Object.assign(&#123;&#125;, v1, null, v2, undefined, v3, v4); </span><br><span class="line">// 原始类型会被包装，null 和 undefined 会被忽略。</span><br><span class="line">// 注意，只有字符串的包装对象才可能有自身可枚举属性。</span><br><span class="line">console.log(obj); // &#123; &quot;0&quot;: &quot;a&quot;, &quot;1&quot;: &quot;b&quot;, &quot;2&quot;: &quot;c&quot; &#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">//异常会打断后续拷贝任务</span><br><span class="line">const target = Object.defineProperty(&#123;&#125;, &quot;foo&quot;, &#123;</span><br><span class="line">    value: 1,</span><br><span class="line">    writable: false</span><br><span class="line">&#125;); // target 的 foo 属性是个只读属性。</span><br><span class="line"></span><br><span class="line">Object.assign(target, &#123;bar: 2&#125;, &#123;foo2: 3, foo: 3, foo3: 3&#125;, &#123;baz: 4&#125;);</span><br><span class="line">// TypeError: &quot;foo&quot; is read-only</span><br><span class="line">// 注意这个异常是在拷贝第二个源对象的第二个属性时发生的。</span><br><span class="line"></span><br><span class="line">console.log(target.bar);  // 2，说明第一个源对象拷贝成功了。</span><br><span class="line">console.log(target.foo2); // 3，说明第二个源对象的第一个属性也拷贝成功了。</span><br><span class="line">console.log(target.foo);  // 1，只读属性不能被覆盖，所以第二个源对象的第二个属性拷贝失败了。</span><br><span class="line">console.log(target.foo3); // undefined，异常之后 assign 方法就退出了，第三个属性是不会被拷贝到的。</span><br><span class="line">console.log(target.baz);  // undefined，第三个源对象更是不会被拷贝到的。</span><br></pre></td></tr></table></figure>
+
+<h3 id="Object-defineProperty"><a href="#Object-defineProperty" class="headerlink" title="Object.defineProperty()"></a>Object.defineProperty()</h3><p>Object.defineProperty(obj, prop, descriptor)<br>参考连接：<br>Object.create:<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Object/create" target="_blank" rel="noopener">https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Object/create</a><br>Object.assign:<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Object/assign" target="_blank" rel="noopener">https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Object/assign</a></p>
 
       
     </div>
@@ -374,7 +409,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Hexo/" rel="tag"># Hexo</a>
+            <a href="/tags/JavaScript/" rel="tag"># JavaScript</a>
           
         </div>
       
@@ -387,8 +422,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/07/15/hello-world/" rel="next" title="Hello World">
-                <i class="fa fa-chevron-left"></i> Hello World
+              <a href="/2019/09/22/数组api/" rel="next" title="数组api">
+                <i class="fa fa-chevron-left"></i> 数组api
               </a>
             
           </div>
@@ -396,10 +431,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/09/06/hexo主题修改/" rel="prev" title="hexo主题修改">
-                hexo主题修改 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -522,7 +553,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#记录Hexo搭建过程遇到的一些问题"><span class="nav-number">1.</span> <span class="nav-text">记录Hexo搭建过程遇到的一些问题</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#问题一：4000端口被占用"><span class="nav-number">1.1.</span> <span class="nav-text">问题一：4000端口被占用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#问题二：出现错误如下："><span class="nav-number">1.2.</span> <span class="nav-text">问题二：出现错误如下：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Hexo搭建过程参考博文"><span class="nav-number">1.3.</span> <span class="nav-text">Hexo搭建过程参考博文</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Object-create和Object-assign的区别："><span class="nav-number">1.</span> <span class="nav-text">Object.create和Object.assign的区别：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Object-create"><span class="nav-number">2.</span> <span class="nav-text">Object.create()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Object-assign"><span class="nav-number">3.</span> <span class="nav-text">Object.assign()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Object-defineProperty"><span class="nav-number">4.</span> <span class="nav-text">Object.defineProperty()</span></a></li></ol></div>
             
 
           </div>
