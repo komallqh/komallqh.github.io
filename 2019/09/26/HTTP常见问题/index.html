@@ -85,7 +85,7 @@
 <meta property="og:site_name" content="学与思，记与叙">
 <meta property="og:description" content="###关于HTTP与HTTPS">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-09-26T07:02:53.432Z">
+<meta property="og:updated_time" content="2019-09-26T07:29:11.348Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="HTTP常见问题">
 <meta name="twitter:description" content="###关于HTTP与HTTPS">
@@ -360,6 +360,19 @@
 </li>
 </ul>
 <ol start="5">
+<li>请求方法的特点</li>
+</ol>
+<ul>
+<li>GET：参数长度限制，不舍和私密数据，不适合大量数据，一般请求用GET</li>
+<li>POST：数据封装在请求报文中，可传递大量数据且没有限制，不会出现在URL中，表单提交用POST</li>
+<li>HEAD：与GET相似，不过只返回响应头，不返回相应内容，用于查看页面状态（页面是否有更新）</li>
+<li>OPTIONS：获取当前URL所支持的方法</li>
+<li>DELETE:删除某资源</li>
+<li>PUT：把一个资源放到指定位置上，与POST相似，不过POST不指定资源存放位置，POST的数据存放位置有服务器自己决定</li>
+<li>TRACE：回显服务器收到的请求，主要用于测试或诊断</li>
+<li>CONNECT：HTTP/1.1协议预留的，能够将连接改为管道方式的代理服务器，通常用于SSL加密服务器的连接与非加密的HTTP代理服务器的通信</li>
+</ul>
+<ol start="6">
 <li>常见的首部：</li>
 </ol>
 <ul>
@@ -368,7 +381,7 @@
 <li>响应首部字段（响应报文会使用的首部字段）<br>Accept-Ranges：可接受的字节范围<br>Location：令客户端重新定向到的URI<br>Server：HTTP服务器的安装信息</li>
 <li>实体首部字段（请求报文与响应报文的的实体部分使用的首部字段）<br>Allow：资源可支持的HTTP方法<br>Content-Type：实体主类的类型<br>Content-Encoding：实体主体适用的编码方式<br>Content-Language：实体主体的自然语言<br>Content-Length：实体主体的的字节数<br>Content-Range：实体主体的位置范围，一般用于发出部分请求时使用</li>
 </ul>
-<ol start="6">
+<ol start="7">
 <li>HTTPS工作原理</li>
 </ol>
 <ul>
@@ -380,7 +393,7 @@
 <li>将待传送的消息与随机值进行对称加密发送给客户端</li>
 <li>客户端收到消息后利用随机值进行解密</li>
 </ul>
-<ol start="7">
+<ol start="8">
 <li>HTTP1.1特性</li>
 </ol>
 <ul>
@@ -388,7 +401,7 @@
 <li>管线化</li>
 <li>断点续传</li>
 </ul>
-<ol start="8">
+<ol start="9">
 <li>HTTP优化方案 </li>
 </ol>
 <ul>
@@ -399,6 +412,7 @@
 <li>SSL加速</li>
 <li>TCP缓冲</li>
 </ul>
+<p>参考连接：<br>HTTP面试题都在这里<a href="https://www.cnblogs.com/Java3y/p/8444033.html" target="_blank" rel="noopener">https://www.cnblogs.com/Java3y/p/8444033.html</a><br>https工作原理<br><a href="https://blog.csdn.net/sean_cd/article/details/6966130" target="_blank" rel="noopener">https://blog.csdn.net/sean_cd/article/details/6966130</a><br>HTTP请求报文和响应报文<br><a href="https://www.jianshu.com/p/0015277c6575" target="_blank" rel="noopener">https://www.jianshu.com/p/0015277c6575</a></p>
 
       
     </div>
