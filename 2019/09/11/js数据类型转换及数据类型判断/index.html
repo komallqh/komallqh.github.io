@@ -77,18 +77,18 @@
 
 
 
-<meta name="description" content="数据类型js的数据类型有七种，其中有六种基本类型：null，undefined，boolean，string，number，symbol；以及一种引用类型：object 数据类型的转换显式转换一. 将非数值转换为数值类型的函数 ：Number(); parseInt(), parseFloat()Number()  函数转换规则：  boolean：true转换为1，false转换为0 numbe">
+<meta name="description" content="数据类型js的数据类型有七种，其中有六种基本类型：null，undefined，boolean，string，number，symbol；以及一种引用类型：object">
 <meta name="keywords" content="JavaScript">
 <meta property="og:type" content="article">
 <meta property="og:title" content="js数据类型转换及数据类型判断">
 <meta property="og:url" content="http://yoursite.com/2019/09/11/js数据类型转换及数据类型判断/index.html">
 <meta property="og:site_name" content="学与思，记与叙">
-<meta property="og:description" content="数据类型js的数据类型有七种，其中有六种基本类型：null，undefined，boolean，string，number，symbol；以及一种引用类型：object 数据类型的转换显式转换一. 将非数值转换为数值类型的函数 ：Number(); parseInt(), parseFloat()Number()  函数转换规则：  boolean：true转换为1，false转换为0 numbe">
+<meta property="og:description" content="数据类型js的数据类型有七种，其中有六种基本类型：null，undefined，boolean，string，number，symbol；以及一种引用类型：object">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-09-19T15:22:31.002Z">
+<meta property="og:updated_time" content="2019-09-26T07:07:00.964Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="js数据类型转换及数据类型判断">
-<meta name="twitter:description" content="数据类型js的数据类型有七种，其中有六种基本类型：null，undefined，boolean，string，number，symbol；以及一种引用类型：object 数据类型的转换显式转换一. 将非数值转换为数值类型的函数 ：Number(); parseInt(), parseFloat()Number()  函数转换规则：  boolean：true转换为1，false转换为0 numbe">
+<meta name="twitter:description" content="数据类型js的数据类型有七种，其中有六种基本类型：null，undefined，boolean，string，number，symbol；以及一种引用类型：object">
 
 
 
@@ -345,8 +345,9 @@
       
 
       
-        <h2 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h2><p>js的数据类型有七种，其中有六种基本类型：null，undefined，boolean，string，number，symbol；以及一种引用类型：object</p>
-<h2 id="数据类型的转换"><a href="#数据类型的转换" class="headerlink" title="数据类型的转换"></a>数据类型的转换</h2><h3 id="显式转换"><a href="#显式转换" class="headerlink" title="显式转换"></a>显式转换</h3><p>一. 将非数值转换为数值类型的函数 ：Number(); parseInt(), parseFloat()<br>Number()  函数转换规则：</p>
+        <h3 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h3><p>js的数据类型有七种，其中有六种基本类型：null，undefined，boolean，string，number，symbol；以及一种引用类型：object</p>
+<a id="more"></a>
+<h3 id="数据类型的转换"><a href="#数据类型的转换" class="headerlink" title="数据类型的转换"></a>数据类型的转换</h3><h4 id="显式转换"><a href="#显式转换" class="headerlink" title="显式转换"></a>显式转换</h4><p>一. 将非数值转换为数值类型的函数 ：Number(); parseInt(), parseFloat()<br>Number()  函数转换规则：</p>
 <ul>
 <li>boolean：true转换为1，false转换为0</li>
 <li>number：原样输出</li>
@@ -373,23 +374,23 @@
 <p>如果存在NaN，一律返回false<br>再看有没有布尔，有布尔就将布尔转换为数字<br>接着看有没有字符串, 有三种情况，对方是对象，对象使用toString进行转换；对方是数字，字符串转数字；对方是字符串，直接比较；其他返回false<br>如果是数字，对方是对象，对象取valueOf进行比较, 其他一律返回false<br>null, undefined不会进行类型转换, 但它们俩相等<br>这个顺序一定要死记，这是面试时经常问到的。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">0 == undefined	//false</span><br><span class="line">1 == true		//true</span><br><span class="line">2 == &#123;valueOf: function()&#123;return 2&#125;&#125;		//true</span><br><span class="line">NaN == NaN	//false</span><br><span class="line"> 8 == undefined	//false</span><br><span class="line">1 == undefined	//false</span><br><span class="line"> null == &#123;toString: function()&#123;return 2&#125;&#125;		//false</span><br><span class="line"> 0 == null		//false</span><br><span class="line"> null == 1		//false</span><br><span class="line"> 1 == &#123; toString:function()&#123; return 1 &#125; , valueOf:function()&#123; return [] &#125;&#125; 		//true</span><br><span class="line"></span><br><span class="line">//undefined不发生类型转换</span><br><span class="line"> console.log(undefined == undefined);　　//true</span><br><span class="line"> console.log(undefined == 0);　　　　　　　//false</span><br><span class="line"> console.log(undefined &gt; 0);　　　　　　　　//false</span><br><span class="line"> console.log(undefined &lt; 0);　　　　　　　　//false</span><br><span class="line"> </span><br><span class="line">//null不发生类型转换</span><br><span class="line"> console.log(null == null);　　　　　　　　//true</span><br><span class="line"> console.log(null &gt;= 0);　　　　　　　　　　//true</span><br><span class="line"> console.log(null == 0);　　　　　　　　　　//false</span><br><span class="line"> console.log(null &gt; 0);　　　　　　　　　　//false</span><br><span class="line"> console.log(null &lt; 0);　　　　　　　　　　//false</span><br><span class="line"> console.log(undefined == null);　　　　//true</span><br></pre></td></tr></table></figure>
 
-<h4 id="隐式转换为字符"><a href="#隐式转换为字符" class="headerlink" title="隐式转换为字符"></a>隐式转换为字符</h4><ul>
+<h5 id="隐式转换为字符"><a href="#隐式转换为字符" class="headerlink" title="隐式转换为字符"></a>隐式转换为字符</h5><ul>
 <li>+””(空字符串)<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">   var a;</span><br><span class="line">      var b = a + &quot;&quot;;</span><br><span class="line">      console.log(typeof b + &quot; &quot; + b);</span><br><span class="line"> </span><br><span class="line">      a = null;</span><br><span class="line">      b = a + &quot;&quot;;</span><br><span class="line">      console.log(typeof b + &quot; &quot; + b);</span><br><span class="line"> </span><br><span class="line">      a = 123;</span><br><span class="line">      b = a + &quot;&quot;;</span><br><span class="line">      console.log(typeof b + &quot; &quot; + b);</span><br><span class="line"> </span><br><span class="line">      a = true;</span><br><span class="line">      b = a + &quot;&quot;;</span><br><span class="line">      console.log(typeof b + &quot; &quot; + b);</span><br><span class="line"></span><br><span class="line">null+&quot;3&quot;		//&quot;null3&quot;</span><br></pre></td></tr></table></figure>
 
 </li>
 </ul>
 <h4 id="隐式转换为数值"><a href="#隐式转换为数值" class="headerlink" title="隐式转换为数值"></a>隐式转换为数值</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">+‘3’ //     3   注意与null+&apos;3&apos;的区别！</span><br><span class="line">‘10’-20  // -10</span><br><span class="line">10-‘one’  //   NaN</span><br></pre></td></tr></table></figure>
 
-<h4 id="隐式转换为boolean"><a href="#隐式转换为boolean" class="headerlink" title="隐式转换为boolean"></a>隐式转换为boolean</h4><p>!!num 相当于调用 Boolean(num)</p>
-<h3 id="关于null-0"><a href="#关于null-0" class="headerlink" title="关于null == 0"></a>关于null == 0</h3><p>要比较相等性之前，不能将null和undefined转换成其他任何值。就是undefined和null与其他数在进行相等判断时不进行类型转换。<br>null == undefined,这个是true</p>
+<h5 id="隐式转换为boolean"><a href="#隐式转换为boolean" class="headerlink" title="隐式转换为boolean"></a>隐式转换为boolean</h5><p>!!num 相当于调用 Boolean(num)</p>
+<h4 id="关于null-0"><a href="#关于null-0" class="headerlink" title="关于null == 0"></a>关于null == 0</h4><p>要比较相等性之前，不能将null和undefined转换成其他任何值。就是undefined和null与其他数在进行相等判断时不进行类型转换。<br>null == undefined,这个是true</p>
 <p>null&gt;0 //null转化为number，为0，所以0&gt;0结果为false。<br>null&gt;=0 //null转化为number，为0&gt;=0，所以结果为true。<br>null==0// null在做相等判断时，不进行转型，所以null和0为不同类型数据，结果为false</p>
-<h3 id="关于NaN"><a href="#关于NaN" class="headerlink" title="关于NaN"></a>关于NaN</h3><p>NaN属于number类型,NaN与任何值都不相等<br>方法 parseInt() 和 parseFloat() 在不能解析指定的字符串时就返回这个值。</p>
+<h4 id="关于NaN"><a href="#关于NaN" class="headerlink" title="关于NaN"></a>关于NaN</h4><p>NaN属于number类型,NaN与任何值都不相等<br>方法 parseInt() 和 parseFloat() 在不能解析指定的字符串时就返回这个值。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">typeof(NaN)		//number</span><br><span class="line">NaN === NaN   //false</span><br></pre></td></tr></table></figure>
 
 <p>注意Number.isNaN()和isNaN的区别:</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">console.log(Number.isNaN(NaN)); // true</span><br><span class="line">console.log(Number.isNaN(Math.sqrt(-2))); // true</span><br><span class="line">console.log(Number.isNaN(&apos;hello&apos;)); // false</span><br><span class="line">console.log(Number.isNaN([&apos;x&apos;])); // false</span><br><span class="line">console.log(Number.isNaN(&#123;&#125;)); // false</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">console.log(isNaN(&apos;hello&apos;)); // true</span><br><span class="line">console.log(isNaN([&apos;x&apos;])); // true</span><br><span class="line">console.log(isNaN(&#123;&#125;)); // true</span><br></pre></td></tr></table></figure>
 
-<h2 id="数据类型判断的四种方法"><a href="#数据类型判断的四种方法" class="headerlink" title="数据类型判断的四种方法"></a>数据类型判断的四种方法</h2><ol>
+<h3 id="数据类型判断的四种方法"><a href="#数据类型判断的四种方法" class="headerlink" title="数据类型判断的四种方法"></a>数据类型判断的四种方法</h3><ol>
 <li><p>typeof</p>
 <p> typeof的返回值有6种：“number”、”string”、”boolean”、”object”、”function”、”undefined”<br> typeof对于基本数据类型判断是没有问题的，但是遇到引用数据类型（如：Array）是不起作用的，返回object</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">typeof [] ; //object</span><br></pre></td></tr></table></figure>
@@ -541,7 +542,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">16</span>
+                  <span class="site-state-item-count">17</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -587,7 +588,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#数据类型"><span class="nav-number">1.</span> <span class="nav-text">数据类型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数据类型的转换"><span class="nav-number">2.</span> <span class="nav-text">数据类型的转换</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#显式转换"><span class="nav-number">2.1.</span> <span class="nav-text">显式转换</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#隐式转换"><span class="nav-number">2.2.</span> <span class="nav-text">隐式转换</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#隐式转换为字符"><span class="nav-number">2.2.1.</span> <span class="nav-text">隐式转换为字符</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#隐式转换为数值"><span class="nav-number">2.2.2.</span> <span class="nav-text">隐式转换为数值</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#隐式转换为boolean"><span class="nav-number">2.2.3.</span> <span class="nav-text">隐式转换为boolean</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#关于null-0"><span class="nav-number">2.3.</span> <span class="nav-text">关于null == 0</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#关于NaN"><span class="nav-number">2.4.</span> <span class="nav-text">关于NaN</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数据类型判断的四种方法"><span class="nav-number">3.</span> <span class="nav-text">数据类型判断的四种方法</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#数据类型"><span class="nav-number">1.</span> <span class="nav-text">数据类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数据类型的转换"><span class="nav-number">2.</span> <span class="nav-text">数据类型的转换</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#显式转换"><span class="nav-number">2.1.</span> <span class="nav-text">显式转换</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#隐式转换"><span class="nav-number">3.</span> <span class="nav-text">隐式转换</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#隐式转换为字符"><span class="nav-number">3.0.1.</span> <span class="nav-text">隐式转换为字符</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#隐式转换为数值"><span class="nav-number">3.1.</span> <span class="nav-text">隐式转换为数值</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#隐式转换为boolean"><span class="nav-number">3.1.1.</span> <span class="nav-text">隐式转换为boolean</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#关于null-0"><span class="nav-number">3.2.</span> <span class="nav-text">关于null == 0</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#关于NaN"><span class="nav-number">3.3.</span> <span class="nav-text">关于NaN</span></a></li></ol><li class="nav-item nav-level-3"><a class="nav-link" href="#数据类型判断的四种方法"><span class="nav-number">4.</span> <span class="nav-text">数据类型判断的四种方法</span></a></li></div>
             
 
           </div>
