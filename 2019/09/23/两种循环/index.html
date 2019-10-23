@@ -85,7 +85,7 @@
 <meta property="og:site_name" content="学与思，记与叙">
 <meta property="og:description" content="for in 和 for of区别">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-09-25T03:56:33.914Z">
+<meta property="og:updated_time" content="2019-09-26T23:13:58.505Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="两种循环">
 <meta name="twitter:description" content="for in 和 for of区别">
@@ -362,7 +362,7 @@
 </li>
 <li><p>for of 特点<br>for of 循环用来获取一对键值对中的值,而 for in 获取的是 键名<br>一个数据结构只要部署了 Symbol.iterator 属性, 就被视为具有 iterator接口, 就可以使用 for of循环。<br>例1这个对象,没有 Symbol.iterator这个属性,所以使用 for of会报 obj is not iterable<br>for of 不同与 forEach, 它可以与 break、continue和return 配合使用,也就是说 for of 循环可以随时退出循环。<br>提供了遍历所有数据结构的统一接口</p>
 </li>
-<li><p>哪些数据结构部署了 Symbol.iteratoer属性了呢?<br>只要有 iterator 接口的数据结构,都可以使用 for of循环。<br>数组 Array<br>Map<br>Set<br>String<br>arguments对象<br>Nodelist对象, 就是获取的dom列表集合<br>以上这些都可以直接使用 for of 循环。 凡是部署了 iterator 接口的数据结构也都可以使用数组的 扩展运算符(…)、和解构赋值等操作。</p>
+<li><p>哪些数据结构部署了 Symbol.iteratoer属性了呢?<br>只要有 iterator 接口的数据结构,都可以使用 for of循环。<br>Array<br>Map<br>Set<br>String<br>arguments对象<br>Nodelist对象, 就是获取的dom列表集合<br>以上这些都可以直接使用 for of 循环。 凡是部署了 iterator 接口的数据结构也都可以使用数组的 扩展运算符(…)、和解构赋值等操作。</p>
 </li>
 </ul>
 <p>我也想让对象可以使用 for of循环怎么办?使用 Object.keys() 获取对象的 key值集合后,再使用 for of<br>以例1为例,可以给一个对象部署 Symbol.iterator属性。</p>
