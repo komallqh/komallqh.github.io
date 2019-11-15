@@ -85,7 +85,7 @@
 <meta property="og:site_name" content="学与思，记与叙">
 <meta property="og:description" content="状态码分类表">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-09-21T10:53:23.910Z">
+<meta property="og:updated_time" content="2019-11-12T09:08:06.858Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="HTTP常见状态码">
 <meta name="twitter:description" content="状态码分类表">
@@ -385,14 +385,13 @@
 <p>301—— Moved Permanently：永久性重定向，表示请求的资源被分配了新的URL，之后应使用更改的URL；</p>
 <p>302 ——Found：临时性重定向，表示请求的资源被分配了新的URL，希望本次访问使用新的URL；</p>
 <pre><code>301与302的区别：前者是永久移动，后者是临时移动（之后可能还会更改URL）</code></pre><p>303 ——See Other：表示请求的资源被分配了新的URL，应使用GET方法定向获取请求的资源；</p>
-<pre><code>302与303的区别：后者明确表示客户端应当采用GET方式获取资源</code></pre><p>304—— Not Modified：表示客户端发送附带条件（是指采用GET方法的请求报文中包含if-Match、If-Modified-Since、If-None-Match、If-Range、If-Unmodified-Since中任一首部）的请求时，服务器端允许访问资源，但是该请求未满足条件的情况下返回304；</p>
+<pre><code>302与303的区别：后者明确表示客户端应当采用GET方式获取资源</code></pre><p>304—— 如果客户端发送了一个带条件的GET 请求且该请求已被允许，而文档的内容（自上次访问以来或者根据请求的条件）并没有改变，则服务器应当返回这个304状态码。简单的表达就是：服务端已经执行了GET，但文件未变化。</p>
 <p>307——Temporary Redirect：临时重定向，与302有着相同的含义，307会遵照浏览器标准不会从POST变成GET；（不同浏览器可能会出现不同的情况）；</p>
 <p>400—— Bad Request：表示请求报文中存在语法错误；</p>
 <p>401 ——Unauthorized：未经许可，需要通过HTTP认证；</p>
-<p>403 ——Forbidden：服务器拒绝该次访问（访问权限出现问题）</p>
+<p>403 ——Forbidden：服务器理解请求客户端的请求，但是拒绝执行此请求</p>
 <p>404 ——Not Found：表示服务器上无法找到请求的资源，除此之外，也可以在服务器拒绝请求但不想给拒绝原因时使用；</p>
-<p>500 ——Inter Server Error：表示服务器在执行请求时发生了错误，也有可能是web应用存在的bug或某些临时的错误时；</p>
-<p>503—— Server Unavailable：表示服务器暂时处于超负载或正在进行停机维护，无法处理请求；</p>
+<p>500 ——Inter Server Error：表示服务器在执行请求时发生了错误，也有可能是web应用存在的bug或某些临时的错误时；<br>501 Not Implemented 服务器不支持请求的功能，无法完成请求<br>502 Bad Gateway 充当网关或代理的服务器，从远端服务器接收到了一个无效的请求<br>503—— Server Unavailable：表示服务器暂时处于超负载或正在进行停机维护，无法处理请求；<br>504 Gateway Time-out    充当网关或代理的服务器，未及时从远端服务器获取请求<br>505 HTTP Version not supported  服务器不支持请求的HTTP协议的版本，无法完成处理</p>
 <p>参考链接：<br>常见HTTP状态码：<br><a href="https://blog.csdn.net/banana960531/article/details/85621865" target="_blank" rel="noopener">https://blog.csdn.net/banana960531/article/details/85621865</a><br>HTTP常见的状态码有哪些？<br><a href="https://blog.csdn.net/qq_31879707/article/details/55505857" target="_blank" rel="noopener">https://blog.csdn.net/qq_31879707/article/details/55505857</a><br>状态码200、300、400、500序列<br><a href="https://www.cnblogs.com/sdcs/p/8508374.html" target="_blank" rel="noopener">https://www.cnblogs.com/sdcs/p/8508374.html</a></p>
 
       
