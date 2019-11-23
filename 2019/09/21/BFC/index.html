@@ -89,8 +89,10 @@
 <meta property="og:image" content="https://img-blog.csdnimg.cn/20190921094520107.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjMwNDAzNw==,size_16,color_FFFFFF,t_70">
 <meta property="og:image" content="https://img-blog.csdnimg.cn/20190921094911151.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjMwNDAzNw==,size_16,color_FFFFFF,t_70">
 <meta property="og:image" content="https://img-blog.csdnimg.cn/20190921095501834.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjMwNDAzNw==,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20191123165339372.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjMwNDAzNw==,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20191123165427938.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjMwNDAzNw==,size_16,color_FFFFFF,t_70">
 <meta property="og:image" content="https://img-blog.csdnimg.cn/20190921095635517.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjMwNDAzNw==,size_16,color_FFFFFF,t_70">
-<meta property="og:updated_time" content="2019-11-15T08:14:25.683Z">
+<meta property="og:updated_time" content="2019-11-23T09:00:00.093Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="BFC">
 <meta name="twitter:description" content="BFC是什么BFC全称是Block Formatting Context，即块格式化上下文。">
@@ -406,7 +408,17 @@
 
 <p><img src="https://img-blog.csdnimg.cn/20190921095501834.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjMwNDAzNw==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
 <ul>
-<li>高度塌陷<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">html</span><br><span class="line">&lt;div class=&quot;box&quot;&gt;</span><br><span class="line">    &lt;div class=&quot;demo&quot;&gt;&lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">css</span><br><span class="line">.box&#123;width: 300px;height: 300px;background-color: black;&#125;</span><br><span class="line">.demo&#123;width: 100px;height: 100px;background-color: red;margin: 20px;&#125;</span><br></pre></td></tr></table></figure>
+<li>高度塌陷<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;div style=&quot;border: 1px solid #000;&quot;&gt;</span><br><span class="line">    &lt;div style=&quot;width: 100px;height: 100px;background: #eee;float: left;&quot;&gt;&lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<p><img src="https://img-blog.csdnimg.cn/20191123165339372.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjMwNDAzNw==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<p>解决:给父盒子加上BFC</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;div style=&quot;border: 1px solid #000;overflow: hidden&quot;&gt;</span><br><span class="line">    &lt;div style=&quot;width: 100px;height: 100px;background: #eee;float: left;&quot;&gt;&lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://img-blog.csdnimg.cn/20191123165427938.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjMwNDAzNw==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<ul>
+<li>子盒子设置margin，父盒子掉落<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">html</span><br><span class="line">&lt;div class=&quot;box&quot;&gt;</span><br><span class="line">    &lt;div class=&quot;demo&quot;&gt;&lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">css</span><br><span class="line">.box&#123;width: 300px;height: 300px;background-color: black;&#125;</span><br><span class="line">.demo&#123;width: 100px;height: 100px;background-color: red;margin: 20px;&#125;</span><br></pre></td></tr></table></figure>
 
 </li>
 </ul>
@@ -533,7 +545,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">18</span>
+                  <span class="site-state-item-count">19</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
