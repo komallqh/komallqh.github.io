@@ -1,14 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title><![CDATA[abc]]></title>
-    <url>%2F2020%2F07%2F05%2Fabc%2F</url>
-    <content type="text"><![CDATA[can not read a block mapping entry; a multiline key may not be an implicit key at line 4, column 1:]]></content>
-      <tags>
-        <tag>test</tag>
-      </tags>
-  </entry>
-  <entry>
     <title><![CDATA[git]]></title>
     <url>%2F2020%2F07%2F05%2Fgit%2F</url>
     <content type="text"><![CDATA[一小时学会git]]></content>
